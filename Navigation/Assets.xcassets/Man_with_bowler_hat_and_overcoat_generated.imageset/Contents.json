@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Man_with_bowler_hat_and_overcoat_generated.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Man_with_bowler_hat_and_overcoat_generated 1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Man_with_bowler_hat_and_overcoat_generated 2.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

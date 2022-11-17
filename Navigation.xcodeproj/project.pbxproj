@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D09189442923F8390073EC9A /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09189432923F8390073EC9A /* ProfileHeaderView.swift */; };
 		D0B91A9328F04E630012269F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B91A9228F04E630012269F /* Post.swift */; };
 		D0B91A9728F05A910012269F /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B91A9628F05A910012269F /* UIAlertController.swift */; };
 		D0BC3F9928F05D0B00ADE969 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC3F9828F05D0B00ADE969 /* InfoViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D09189432923F8390073EC9A /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		D0B91A9228F04E630012269F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D0B91A9628F05A910012269F /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		D0BC3F9828F05D0B00ADE969 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D091893E2923D4510073EC9A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D0D2DAD328F03248001CB2E5 /* ProfileViewController.swift */,
+				D09189432923F8390073EC9A /* ProfileHeaderView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		D0D2DAAD28EF1132001CB2E5 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +75,10 @@
 		D0D2DAB828EF1132001CB2E5 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				D091893E2923D4510073EC9A /* Profile */,
 				D0D2DAB928EF1132001CB2E5 /* AppDelegate.swift */,
 				D0D2DABB28EF1132001CB2E5 /* SceneDelegate.swift */,
 				D0D2DAD128F03232001CB2E5 /* FeedViewController.swift */,
-				D0D2DAD328F03248001CB2E5 /* ProfileViewController.swift */,
 				D0D2DAD528F04120001CB2E5 /* PostViewController.swift */,
 				D0BC3F9828F05D0B00ADE969 /* InfoViewController.swift */,
 				D0B91A9628F05A910012269F /* UIAlertController.swift */,
@@ -153,6 +164,7 @@
 				D0D2DAD628F04120001CB2E5 /* PostViewController.swift in Sources */,
 				D0D2DAD228F03232001CB2E5 /* FeedViewController.swift in Sources */,
 				D0B91A9728F05A910012269F /* UIAlertController.swift in Sources */,
+				D09189442923F8390073EC9A /* ProfileHeaderView.swift in Sources */,
 				D0B91A9328F04E630012269F /* Post.swift in Sources */,
 				D0D2DABA28EF1132001CB2E5 /* AppDelegate.swift in Sources */,
 				D0BC3F9928F05D0B00ADE969 /* InfoViewController.swift in Sources */,
