@@ -33,6 +33,8 @@ class ProfileHeaderView: UIView {
         let labelFrame = CGRect(x: 160, y: 224, width: 200, height: 14)
         let label = UILabel(frame: labelFrame)
         label.text = "Напишите что-нибудь"
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = .gray
         return label
     }
     
@@ -65,6 +67,4 @@ class ProfileHeaderView: UIView {
         addSubview(getStatusLabel())
         addSubview(getShowStatusButton())
     }
-
-
 }
