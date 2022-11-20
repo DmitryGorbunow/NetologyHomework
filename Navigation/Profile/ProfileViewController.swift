@@ -17,10 +17,8 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .lightGray
         view.addSubview(profileHeaderView)
         self.title = "Профиль"
-//        self.navigationController?.navigationBar.backgroundColor = .white
     }
-    
-    
+
     override func viewWillLayoutSubviews() {
         profileHeaderView.frame = view.frame
         
