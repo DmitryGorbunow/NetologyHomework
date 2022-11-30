@@ -34,20 +34,5 @@ class UIAlertController: UIViewController {
             print(self.massage)
         }), for: .touchUpInside)
         NSLayoutConstraint.activate([uiButton1.centerYAnchor.constraint(equalTo: view.centerYAnchor), uiButton1.leadingAnchor.constraint(equalTo: view.centerXAnchor), uiButton1.trailingAnchor.constraint(equalTo: view.trailingAnchor), uiButton1.heightAnchor.constraint(equalToConstant: 30)])
-        
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
