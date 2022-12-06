@@ -12,12 +12,10 @@ class FeedViewController: UIViewController {
     let post = Post(title: "Это пост")
     
     private lazy var vStack: UIStackView = {
-        
         let stack = UIStackView()
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.spacing = 10
-        
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -54,16 +52,27 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        addSubviews()
+        setupConstraints()
+    }
+    
+    func setupView() {
         view.backgroundColor = .systemBackground
+    }
+    
+    func addSubviews() {
         view.addSubview(vStack)
         vStack.addArrangedSubview(openPostButton1)
         vStack.addArrangedSubview(openPostButton2)
+    }
+    
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             vStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             vStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             vStack.heightAnchor.constraint(equalToConstant: view.frame.height / 8),
             vStack.widthAnchor.constraint(equalToConstant: view.frame.width / 2)
-            
         ])
     }
     
