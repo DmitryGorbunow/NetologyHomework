@@ -9,6 +9,19 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.keyboardDismissMode = .onDrag
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        return contentView
+    }()
+    
     lazy var logo: UIImageView = {
         let image = UIImageView(image: UIImage(named: "logo"))
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +90,7 @@ class LogInViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -87,33 +100,75 @@ class LogInViewController: UIViewController {
     }
     
     func addSubviews() {
-        view.addSubview(logo)
-        view.addSubview(loginStackView)
-        view.addSubview(logInButton)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(logo)
+        contentView.addSubview(loginStackView)
+        contentView.addSubview(logInButton)
         loginStackView.addArrangedSubview(emailTextField)
         loginStackView.addArrangedSubview(passwordTextField)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            
             logo.widthAnchor.constraint(equalToConstant: 100),
             logo.heightAnchor.constraint(equalToConstant: 100),
-            logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
+            logo.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            logo.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 120),
             
             loginStackView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 120),
             loginStackView.heightAnchor.constraint(equalToConstant: 100),
-            loginStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            loginStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            loginStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            loginStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             logInButton.topAnchor.constraint(equalTo: loginStackView.bottomAnchor, constant: 16),
             logInButton.heightAnchor.constraint(equalToConstant: 50),
-            logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            logInButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            logInButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
     }
     
-    @objc func loginButtonPressed() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeKeyboardEvents()
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func subscribeKeyboardEvents() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        guard let keySize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+           return
+        }
+        self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keySize.height + 80, right: 0)
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset = .zero
+    }
+    
+    @objc func loginButtonPressed() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
