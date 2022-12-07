@@ -10,7 +10,7 @@ import UIKit
 class LogInViewController: UIViewController {
     
     lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
+        let scrollView = UIScrollView(frame: .zero)
         scrollView.keyboardDismissMode = .onDrag
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
@@ -64,7 +64,6 @@ class LogInViewController: UIViewController {
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
-        
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -77,14 +76,14 @@ class LogInViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.setTitle("Log In", for: .normal)
         button.titleLabel?.textColor = .white
-        
+
         if let imagePx = UIImage(named: "blue_pixel") {
             button.setBackgroundImage(imagePx.alpha(1), for: .normal)
             button.setBackgroundImage(imagePx.alpha(0.8), for: .selected)
             button.setBackgroundImage(imagePx.alpha(0.8), for: .highlighted)
             button.setBackgroundImage(imagePx.alpha(0.8), for: .disabled)
         }
-        
+
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -113,30 +112,30 @@ class LogInViewController: UIViewController {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
+            scrollView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
             logo.widthAnchor.constraint(equalToConstant: 100),
             logo.heightAnchor.constraint(equalToConstant: 100),
             logo.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            logo.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 120),
-            
+            logo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 120),
+
             loginStackView.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 120),
             loginStackView.heightAnchor.constraint(equalToConstant: 100),
             loginStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             loginStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
+
             logInButton.topAnchor.constraint(equalTo: loginStackView.bottomAnchor, constant: 16),
             logInButton.heightAnchor.constraint(equalToConstant: 50),
             logInButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            logInButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            logInButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            logInButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
     
@@ -168,7 +167,7 @@ class LogInViewController: UIViewController {
     
     @objc func loginButtonPressed() {
         let vc = ProfileViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.setViewControllers([vc], animated: true)
     }
     
 }
