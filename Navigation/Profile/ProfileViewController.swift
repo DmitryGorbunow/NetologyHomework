@@ -8,59 +8,64 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-    var profileHeaderView = ProfileHeaderView()
     
-    private lazy var newButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("New Button", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.titleLabel?.textColor = .white
-        button.layer.cornerRadius = 14
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.layer.shadowRadius = 4
-        button.layer.shadowOpacity = 0.7
-        button.addTarget(self, action: #selector(newButtonPressed), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+    let postData = PostData()
+    
+    lazy var tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifire)
+        table.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: ProfileHeaderView.identifire)
+        return table
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        view.backgroundColor = .systemBackground
+        tableView.delegate = self
+        tableView.dataSource = self
         addSubviews()
         setupConstraints()
-    }
-    
-    func setupView() {
-        self.title = "Профиль"
-        view.backgroundColor = .systemBackground
+
     }
     
     func addSubviews() {
-        view.addSubview(profileHeaderView)
-        view.addSubview(newButton)
+        view.addSubview(tableView)
     }
     
     func setupConstraints() {
-        profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
-            profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            profileHeaderView.heightAnchor.constraint(equalToConstant: 220),
-            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            newButton.heightAnchor.constraint(equalToConstant: 40),
-            newButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            newButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            newButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
-    @objc func newButtonPressed() {
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postData.posts.count
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard section == 0 else { return nil }
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileHeaderView.identifire) as! ProfileHeaderView
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        200
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifire, for: indexPath) as! PostTableViewCell
+        cell.postAuthor.text = postData.posts[indexPath.row].author
+        cell.postImage.image = UIImage(named: postData.posts[indexPath.row].image)
+        cell.postDescription.text = postData.posts[indexPath.row].description
+        cell.postLikes.text = "Likes: \(postData.posts[indexPath.row].likes)"
+        cell.postViews.text = "Views: \(postData.posts[indexPath.row].views)" 
+        return cell
+    }
 }

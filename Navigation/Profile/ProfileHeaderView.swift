@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ProfileHeaderView: UIView {
+class ProfileHeaderView: UITableViewHeaderFooterView {
+    
+    static let identifire = "ProfileHeaderView"
     
     private var statusText: String?
     
     private lazy var fullNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Дмитрий Горбунов"
+        label.text = "Dmitry Gorbunow"
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -46,7 +48,7 @@ class ProfileHeaderView: UIView {
     
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
-        label.text = "Напишите что-нибудь"
+        label.text = "Waiting for something..."
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +57,7 @@ class ProfileHeaderView: UIView {
     
     private lazy var setStatusButton: UIButton = {
         let setStatusButton = UIButton()
-        setStatusButton.setTitle("Показать статус", for: .normal)
+        setStatusButton.setTitle("Set status", for: .normal)
         setStatusButton.backgroundColor = .systemBlue
         setStatusButton.titleLabel?.textColor = .white
         setStatusButton.layer.cornerRadius = 14
@@ -76,8 +78,8 @@ class ProfileHeaderView: UIView {
         self.statusText = textField.text
     }
     
-    override init(frame: CGRect) {
-        super.init (frame: frame)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         addSubviews()
         setupConstraints()
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
-    let post = Post(title: "Это пост")
+
     
     private lazy var vStack: UIStackView = {
         let stack = UIStackView()
@@ -22,7 +22,7 @@ class FeedViewController: UIViewController {
     
     private lazy var openPostButton1: UIButton = {
         let setStatusButton = UIButton()
-        setStatusButton.setTitle("Открыть пост", for: .normal)
+        setStatusButton.setTitle("Open post", for: .normal)
         setStatusButton.backgroundColor = .systemBlue
         setStatusButton.titleLabel?.textColor = .white
         setStatusButton.layer.cornerRadius = 14
@@ -37,7 +37,7 @@ class FeedViewController: UIViewController {
     
     private lazy var openPostButton2: UIButton = {
         let setStatusButton = UIButton()
-        setStatusButton.setTitle("Открыть пост", for: .normal)
+        setStatusButton.setTitle("Open post", for: .normal)
         setStatusButton.backgroundColor = .systemBlue
         setStatusButton.titleLabel?.textColor = .white
         setStatusButton.layer.cornerRadius = 14
