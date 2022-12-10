@@ -35,7 +35,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     }()
     
     private lazy var avatarImageView: UIImageView = {
-        let image = UIImage(named: "Man_with_bowler_hat_and_overcoat_generated")
+        let image = UIImage(named: "ava")
         let imageView = UIImageView(image: image)
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 60
@@ -116,6 +116,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
             setStatusButton.topAnchor.constraint (equalTo: avatarImageView.bottomAnchor, constant: 16),
             setStatusButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             setStatusButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            setStatusButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
             
             statusTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 142),
             statusTextField.topAnchor.constraint (equalTo: self.setStatusButton.topAnchor, constant: -50),
