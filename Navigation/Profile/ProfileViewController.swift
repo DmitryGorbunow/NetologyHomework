@@ -26,14 +26,25 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        addSubviews()
+        setupConstraints()
+    }
+    
+    func setupView() {
+        self.title = "Профиль"
         view.backgroundColor = .systemBackground
+    }
+    
+    func addSubviews() {
         view.addSubview(profileHeaderView)
         view.addSubview(newButton)
+    }
+    
+    func setupConstraints() {
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        self.title = "Профиль"
         
         NSLayoutConstraint.activate([
             profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

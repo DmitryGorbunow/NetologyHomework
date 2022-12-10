@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0617ADE293F93CB0051148E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0617ADD293F93CB0051148E /* LogInViewController.swift */; };
+		D0617AE0293FAF960051148E /* ExtansionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0617ADF293FAF960051148E /* ExtansionUIImage.swift */; };
 		D09189442923F8390073EC9A /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09189432923F8390073EC9A /* ProfileHeaderView.swift */; };
 		D0B91A9328F04E630012269F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B91A9228F04E630012269F /* Post.swift */; };
 		D0B91A9728F05A910012269F /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B91A9628F05A910012269F /* UIAlertController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0617ADD293F93CB0051148E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D0617ADF293FAF960051148E /* ExtansionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtansionUIImage.swift; sourceTree = "<group>"; };
 		D09189432923F8390073EC9A /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		D0B91A9228F04E630012269F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D0B91A9628F05A910012269F /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			children = (
 				D0D2DAD328F03248001CB2E5 /* ProfileViewController.swift */,
 				D09189432923F8390073EC9A /* ProfileHeaderView.swift */,
+				D0617ADD293F93CB0051148E /* LogInViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 				D0BC3F9828F05D0B00ADE969 /* InfoViewController.swift */,
 				D0B91A9628F05A910012269F /* UIAlertController.swift */,
 				D0B91A9228F04E630012269F /* Post.swift */,
+				D0617ADF293FAF960051148E /* ExtansionUIImage.swift */,
 				D0D2DAC228EF1133001CB2E5 /* Assets.xcassets */,
 				D0D2DAC428EF1133001CB2E5 /* LaunchScreen.storyboard */,
 				D0D2DAC728EF1133001CB2E5 /* Info.plist */,
@@ -168,6 +174,8 @@
 				D0B91A9328F04E630012269F /* Post.swift in Sources */,
 				D0D2DABA28EF1132001CB2E5 /* AppDelegate.swift in Sources */,
 				D0BC3F9928F05D0B00ADE969 /* InfoViewController.swift in Sources */,
+				D0617AE0293FAF960051148E /* ExtansionUIImage.swift in Sources */,
+				D0617ADE293F93CB0051148E /* LogInViewController.swift in Sources */,
 				D0D2DABC28EF1132001CB2E5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = My.Navigation;
+				PRODUCT_BUNDLE_IDENTIFIER = My.Navigation.DG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -346,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = My.Navigation;
+				PRODUCT_BUNDLE_IDENTIFIER = My.Navigation.DG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
