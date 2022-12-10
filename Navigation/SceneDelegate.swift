@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createFirstController() -> UINavigationController {
         let navigationVC = UINavigationController(rootViewController: FeedViewController())
         
-        navigationVC.tabBarItem = UITabBarItem(title: "Лента", image: UIImage(systemName: "lineweight"), tag: 0)
+        navigationVC.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "lineweight"), tag: 0)
         
         return navigationVC
     }
@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createSecondController() -> UINavigationController {
         let navigationVC = UINavigationController(rootViewController: LogInViewController())
         
-        navigationVC.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.fill"), tag: 1)
+        navigationVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 1)
         
         return navigationVC
     }

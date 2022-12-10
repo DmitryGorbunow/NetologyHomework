@@ -11,9 +11,9 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let postName = (self.navigationController?.viewControllers[0] as! FeedViewController).post.title
+//        let postName = (self.navigationController?.viewControllers[0] as! FeedViewController).post.title
         view.backgroundColor = .brown
-        self.title = postName
+//        self.title = postName
         let myButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(toInfoViewController))
         navigationItem.rightBarButtonItem = myButton
         

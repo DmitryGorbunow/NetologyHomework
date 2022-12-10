@@ -10,7 +10,8 @@
 		D0617ADE293F93CB0051148E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0617ADD293F93CB0051148E /* LogInViewController.swift */; };
 		D0617AE0293FAF960051148E /* ExtansionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0617ADF293FAF960051148E /* ExtansionUIImage.swift */; };
 		D09189442923F8390073EC9A /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09189432923F8390073EC9A /* ProfileHeaderView.swift */; };
-		D0B91A9328F04E630012269F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B91A9228F04E630012269F /* Post.swift */; };
+		D0ADF9292941210000A471DB /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADF9282941210000A471DB /* PostTableViewCell.swift */; };
+		D0AFBF5B29411A5D00B03E83 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFBF5A29411A5D00B03E83 /* Post.swift */; };
 		D0B91A9728F05A910012269F /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B91A9628F05A910012269F /* UIAlertController.swift */; };
 		D0BC3F9928F05D0B00ADE969 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC3F9828F05D0B00ADE969 /* InfoViewController.swift */; };
 		D0D2DABA28EF1132001CB2E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D2DAB928EF1132001CB2E5 /* AppDelegate.swift */; };
@@ -26,7 +27,8 @@
 		D0617ADD293F93CB0051148E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D0617ADF293FAF960051148E /* ExtansionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtansionUIImage.swift; sourceTree = "<group>"; };
 		D09189432923F8390073EC9A /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
-		D0B91A9228F04E630012269F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D0ADF9282941210000A471DB /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		D0AFBF5A29411A5D00B03E83 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D0B91A9628F05A910012269F /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		D0BC3F9828F05D0B00ADE969 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		D0D2DAB628EF1132001CB2E5 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +59,8 @@
 				D0D2DAD328F03248001CB2E5 /* ProfileViewController.swift */,
 				D09189432923F8390073EC9A /* ProfileHeaderView.swift */,
 				D0617ADD293F93CB0051148E /* LogInViewController.swift */,
+				D0AFBF5A29411A5D00B03E83 /* Post.swift */,
+				D0ADF9282941210000A471DB /* PostTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -87,7 +91,6 @@
 				D0D2DAD528F04120001CB2E5 /* PostViewController.swift */,
 				D0BC3F9828F05D0B00ADE969 /* InfoViewController.swift */,
 				D0B91A9628F05A910012269F /* UIAlertController.swift */,
-				D0B91A9228F04E630012269F /* Post.swift */,
 				D0617ADF293FAF960051148E /* ExtansionUIImage.swift */,
 				D0D2DAC228EF1133001CB2E5 /* Assets.xcassets */,
 				D0D2DAC428EF1133001CB2E5 /* LaunchScreen.storyboard */,
@@ -169,14 +172,15 @@
 				D0D2DAD428F03248001CB2E5 /* ProfileViewController.swift in Sources */,
 				D0D2DAD628F04120001CB2E5 /* PostViewController.swift in Sources */,
 				D0D2DAD228F03232001CB2E5 /* FeedViewController.swift in Sources */,
+				D0AFBF5B29411A5D00B03E83 /* Post.swift in Sources */,
 				D0B91A9728F05A910012269F /* UIAlertController.swift in Sources */,
 				D09189442923F8390073EC9A /* ProfileHeaderView.swift in Sources */,
-				D0B91A9328F04E630012269F /* Post.swift in Sources */,
 				D0D2DABA28EF1132001CB2E5 /* AppDelegate.swift in Sources */,
 				D0BC3F9928F05D0B00ADE969 /* InfoViewController.swift in Sources */,
 				D0617AE0293FAF960051148E /* ExtansionUIImage.swift in Sources */,
 				D0617ADE293F93CB0051148E /* LogInViewController.swift in Sources */,
 				D0D2DABC28EF1132001CB2E5 /* SceneDelegate.swift in Sources */,
+				D0ADF9292941210000A471DB /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
