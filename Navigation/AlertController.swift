@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UIAlertController: UIViewController {
+class AlertController: UIViewController {
     let massage = "Это сообщение"
     let mainTitle = "Alert"
     override func viewDidLoad() {

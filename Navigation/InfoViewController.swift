@@ -19,7 +19,7 @@ class InfoViewController: UIViewController {
         uiButton.setTitleColor(.black, for: .normal)
         uiButton.translatesAutoresizingMaskIntoConstraints = false
         uiButton.addAction(UIAction(handler: {_ in
-            let vc = UIAlertController()
+            let vc = AlertController()
             self.present(vc, animated: true)
         }), for: .touchUpInside)
         NSLayoutConstraint.activate([uiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor), uiButton.leadingAnchor.constraint(equalTo: view.leadingAnchor), uiButton.trailingAnchor.constraint(equalTo: view.trailingAnchor), uiButton.heightAnchor.constraint(equalToConstant: 30)])
